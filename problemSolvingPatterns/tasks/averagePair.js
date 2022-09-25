@@ -19,4 +19,8 @@ function averagePair(arr, res) {
     return false;
 }
 
-console.log(averagePair([-1,0,3,4,5,6], 4.1));
+// Colt, Solution
+function averagePair(arr, num) {
+    let start = 0;
+    
+}
