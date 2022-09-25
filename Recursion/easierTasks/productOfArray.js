@@ -1,14 +1,9 @@
 function productOfArray(arr) {
-    let product = 1;
-    function inner(arr) {
-        if (arr.length === 0) {
-            return ;
-        }
-        product *= arr[0];
-        inner(arr.slice(1));
+    if(arr.length === 0) {
+        return 1;
     }
-    inner(arr);
-    return product;
+
+    return arr[0] * productOfArray(arr.slice(1));
 }
 
 console.log(productOfArray([1,2,3]));
