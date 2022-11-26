@@ -41,17 +41,22 @@ class SinglyLinkedList {
 	//  Decrement the length of the list by 1
 	//  Return the value of the node removed
 	pop() {
-		if (!this.head) return;
-		let current = this.head,
-			pre;
-		while (current.next !== null) {
-			pre = current;
+		if (!this.head) return undefined;
+
+		let current = this.head;
+		let newTail = current;
+
+		while (current.next) {
+			newTail = current;
 			current = current.next;
 		}
-		pre.next = null;
-		this.tail = pre;
-		this.length--;
-		return current.val;
+		this.tail = newTail;
+		newTail.next = null;
+        this.length--;
+        if(this.length === 0) {
+            this.head = this.tail = null;
+        }
+		return current;
 	}
 }
 
@@ -61,5 +66,10 @@ list.push('Second');
 list.push('Last');
 
 console.log(list.pop());
+console.log(list);
+list.push(999);
+console.log(list);
 console.log(list.pop());
 console.log(list.pop());
+console.log(list.pop());
+console.log(list);
