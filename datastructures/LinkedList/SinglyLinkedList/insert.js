@@ -79,6 +79,14 @@ class SinglyLinkedList {
 		}
 		return current;
 	}
+	set(index, val) {
+		const foundNode = this.get(index);
+		if (foundNode) {
+			foundNode.val = val;
+			return true;
+		}
+		return false;
+	}
 	// Insert pseudocode
 	// If the index is less then 0 or greater then the length return false
 	// If the index is the same as the length, push a new node to the end of the list
